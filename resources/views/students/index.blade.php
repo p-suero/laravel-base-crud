@@ -34,7 +34,7 @@
                                     {{$student->email}}
                                 </td>
                                 <td>
-                                    <a href="#">Dettaglio studente</a>
+                                    <a href="{{route("students.show", ["student" => $student->id])}}" class="btn btn-primary">Dettaglio studente</a>
                                 </td>
                             </tr>
                         @empty
