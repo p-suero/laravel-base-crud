@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h1 class="mt-4 mb-5">Lista studenti</h1>
-                    <a href="#">Crea nuovo prodotto</a>
+                    <h1 class="mt-4 mb-3">Lista studenti</h1>
+                    <a href="{{route("students.create")}}" class="btn btn-success">Crea nuovo prodotto</a>
                 </div>
                 <table class="table">
                     <thead>
