@@ -145,7 +145,7 @@ return [
             "numeric" => "Devi inserire un valore numerico",
             "digits" => "Il numero digitato non comprende 4 campi",
             "required" => "La matricola è un campo obbligatorio",
-            "unique" => "Matriola è già presente in database"
+            "unique" => "La matriola è già presente in database"
         ],
         "email" => [
             "email" => "Inserisci un email valida",

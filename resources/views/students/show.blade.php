@@ -13,6 +13,7 @@
                             <th>Lastname</th>
                             <th>Email</th>
                             <th>Matricola</th>
+                            <th>Azioni</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,6 +32,13 @@
                             </td>
                             <td>
                                 {{$student->code}}
+                            </td>
+                            <td>
+                                <form class="d-inline-block" action="{{route("students.show", ["student" => $student->id])}}" method="post">
+                                    @csrf
+                                    @method("DELETE")
+                                    <button class="btn btn-danger btn-sm" type="submit" name="button">Elimina studente</button>
+                                </form>
                             </td>
                         </tr>
                 </table>

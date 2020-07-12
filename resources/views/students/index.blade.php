@@ -34,7 +34,13 @@
                                     {{$student->email}}
                                 </td>
                                 <td>
-                                    <a href="{{route("students.show", ["student" => $student->id])}}" class="btn btn-primary">Dettaglio studente</a>
+                                    <a href="{{route("students.show", ["student" => $student->id])}}" class="btn btn-primary btn-sm">Dettaglio studente</a>
+                                    <a href="{{route("students.edit", ["student" => $student->id])}}" class="btn btn-warning btn-sm">Modifica dati studente</a>
+                                    <form class="d-inline-block" action="{{route("students.show", ["student" => $student->id])}}" method="post">
+                                        @csrf
+                                        @method("DELETE")
+                                        <button class="btn btn-danger btn-sm" type="submit" name="button">Elimina studente</button>
+                                    </form>
                                 </td>
                             </tr>
                         @empty

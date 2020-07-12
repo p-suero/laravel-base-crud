@@ -66,9 +66,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Student $student)
     {
-        //
+        return view("students.edit", compact("student"));
     }
 
     /**
@@ -78,9 +78,17 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Student $student)
     {
-        //
+        $request->validate([
+            "name"=> "max:255 | required",
+            "lastname" => "max:255 | required",
+            "code" => "numeric | digits:4 | required | unique:students,code," .$student->id,
+            'email' => "email:rfc,dns| required | unique:students,email," .$student->id,
+        ]);
+        $data = $request->all();
+        $student->update($data);
+        return redirect()->route("students.index");
     }
 
     /**
@@ -89,8 +97,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Student $student)
     {
-        //
+        $student->delete();
+        return redirect()->route("students.index");
     }
 }
