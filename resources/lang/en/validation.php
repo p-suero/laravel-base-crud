@@ -133,6 +133,25 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        "name" => [
+            "max" => "Hai superato la soglia dei 255 caratteri",
+            "required" => "Il nome è un campo obbligatorio"
+        ],
+        "lastname" => [
+            "max" => "Hai superato la soglia dei 255 caratteri",
+            "required" => "Il cognome è un campo obbligatorio"
+        ],
+        "code" => [
+            "numeric" => "Devi inserire un valore numerico",
+            "digits" => "Il numero digitato non comprende 4 campi",
+            "required" => "La matricola è un campo obbligatorio",
+            "unique" => "Matriola è già presente in database"
+        ],
+        "email" => [
+            "email" => "Inserisci un email valida",
+            "required" => "L'email è un campo obbligatorio",
+            "unique" => "Email già presente in database"
+        ]
     ],
 
     /*
